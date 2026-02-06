@@ -1,0 +1,17 @@
+streamlit
+langchain
+langchain-community
+langchain-groq
+langchain-openai
+python-dotenv
+bs4
+pypdf
+unstructured
+fake_useragent
+youtube_transcript_api
+dash
+dash-bootstrap-components
+flask
+requests
+lxml
+tiktoken
