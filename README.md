@@ -1,6 +1,6 @@
-# 🤖 Oráculo — Chat com IA baseado em documentos
+# Oráculo — Chat com IA
 
-O **Oráculo** é uma aplicação em **Streamlit** que permite conversar com modelos de linguagem (OpenAI ou Groq) utilizando **conteúdo de arquivos, sites ou vídeos do YouTube** como contexto.
+O **Oráculo** é uma aplicação em **Streamlit** que permite conversar com LLMs utilizando **conteúdo de arquivos, sites ou vídeos do YouTube** como contexto.
 
 O projeto combina:
 
@@ -9,69 +9,44 @@ O projeto combina:
 * **RAG simples baseado em documentos carregados**
 * **Suporte a múltiplas fontes de dados**
 
----
+## Funcionalidades
 
-# ✨ Funcionalidades
+- Chat interativo com IA
+- Leitura de **PDF, CSV e TXT**
+- Análise de **sites**
+- Extração de conteúdo de **vídeos do YouTube**
+- Respostas baseadas **somente no documento carregado**
+- Troca dinâmica de **modelo e provedor**
+- Botão para **limpar conversa**
+- Streaming de resposta em tempo real
 
-* 💬 Chat interativo com IA
-* 📄 Leitura de **PDF, CSV e TXT**
-* 🌐 Análise de **sites**
-* ▶️ Extração de conteúdo de **vídeos do YouTube**
-* 🧠 Respostas baseadas **somente no documento carregado**
-* 🔁 Troca dinâmica de **modelo e provedor**
-* 🗑️ Botão para **limpar conversa**
-* ⚡ Streaming de resposta em tempo real
+## Arquitetura
 
----
+Fluxo principal:
 
-# 🏗️ Arquitetura
+1. O usuário envia um arquivo/link
+2. O usuário escolhe o modelo de IA e insere sua key
+3. O usuário faz perguntas no chat
+4. O chat responde baseado no arquivo/link fornecido
 
-```
-Streamlit UI
-   │
-   ├── Upload / URL / YouTube
-   │
-   ├── Loaders (LangChain Community)
-   │       ├── PyPDFLoader
-   │       ├── CSVLoader
-   │       ├── TextLoader
-   │       ├── WebBaseLoader
-   │       └── YoutubeLoader
-   │
-   └── LLM Chain
-           ├── Prompt com contexto do documento
-           ├── Memória de chat
-           └── Modelo (OpenAI ou Groq)
-```
+## Instalação
 
----
+```bash
+git clone https://github.com/LorenzoMarty/Oraculo-Chatbot.git
+cd Oraculo-Chatbot
 
-# 📦 Requisitos
+# Windows
+.venv\Scripts\activate
 
-Crie um ambiente virtual e instale:
+# Linux/macOS
+source .venv/bin/activate
 
-```
-streamlit
-langchain
-langchain-community
-langchain-groq
-langchain-openai
-python-dotenv
-bs4
-pypdf
-unstructured
-fake_useragent
-youtube_transcript_api
-requests
-lxml
-tiktoken
+pip install -r requirements.txt
 ```
 
----
+## Variáveis de ambiente
 
-# 🔑 Variáveis de ambiente
-
-Crie um arquivo **`.env`** na raiz:
+Crie um arquivo `.env`:
 
 ```
 OPENAI_API_KEY=your_key_here
@@ -84,74 +59,21 @@ DEFAULT_MODEL_GROQ=llama-3.1-8b-instant
 APP_TITLE=Oráculo
 ```
 
-Opcional (remove warning de web scraping):
+## Executando o projeto
 
-```
-USER_AGENT=OraculoBot/1.0
-```
-
----
-
-# ▶️ Como executar
-
-```
-streamlit run app.py
+```bash
+streamlit run app_streamlit.py
 ```
 
-Depois abra no navegador:
+## Tecnologias
 
-```
-http://localhost:8501
-```
+- Python
+- Streamlit
+- LangChain
+- OpenAI API
+- Groq API
 
----
+## Autor
 
-# 🧪 Fluxo de uso
-
-1. Escolha o **tipo de fonte**:
-
-   * Site
-   * YouTube
-   * PDF
-   * CSV
-   * TXT
-
-2. Forneça o arquivo ou URL (opcional).
-
-3. Selecione:
-
-   * **Provedor** (OpenAI ou Groq)
-   * **Modelo**
-
-4. Converse com o Oráculo.
-
-As respostas serão **baseadas no conteúdo carregado**.
-
----
-
-# ⚠️ Limitações atuais
-
-* Não utiliza embeddings vetoriais (RAG completo).
-* Documento é carregado **inteiro no prompt**.
-* Memória é **apenas da sessão atual**.
-* Não há persistência em banco de dados.
-
----
-
-# 📚 Tecnologias
-
-* Python
-* Streamlit
-* LangChain
-* OpenAI API
-* Groq API
-
----
-
-# 👨‍💻 Autor
-
-Projeto desenvolvido para estudo e construção de aplicações reais com **IA generativa, RAG e interfaces web em Python**.
-
----
-
-Se este projeto te ajudou, considere evoluí-lo para produção 🚀
+**Lorenzo Marty**\
+GitHub: https://github.com/LorenzoMarty
