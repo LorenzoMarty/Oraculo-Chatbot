@@ -1,11 +1,11 @@
 # Oráculo — Chat com IA
 
-O **Oráculo** é uma aplicação em **Streamlit** que permite conversar com LLMs utilizando **conteúdo de arquivos, sites ou vídeos do YouTube** como contexto.
+O **Oráculo** é uma aplicação web que permite conversar com LLMs utilizando **conteúdo de arquivos, sites ou vídeos do YouTube** como contexto.
 
 O projeto combina:
 
-* **Streamlit** para interface interativa
-* **LangChain** para orquestração do LLM
+* **Django** para backend
+* **Agno** para orquestração do LLM
 * **RAG simples baseado em documentos carregados**
 * **Suporte a múltiplas fontes de dados**
 
