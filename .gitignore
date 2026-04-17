@@ -1,0 +1,88 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.python-version
+.cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.direnv/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+.envrc
+.streamlit/secrets.toml
+.streamlit/credentials.toml
+
+# Django local files
+db.sqlite3
+db.sqlite3-journal
+*.sqlite
+*.sqlite3
+*.sqlite3-journal
+local_settings.py
+media/
+staticfiles/
+collected_static/
+
+# Streamlit cache/runtime files
+.streamlit/cache/
+
+# Build and package artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+wheelhouse/
+
+# Test, type-checker, and lint caches
+.pytest_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.tox/
+.nox/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Local app data, temporary uploads, and downloads
+tmp/
+temp/
+uploads/
+downloads/
+*.tmp
+*.temp
+
+# RAG/vector database artifacts
+.chroma/
+chroma_db/
+faiss_index/
+qdrant_storage/
+.qdrant/
+storage/
+*.faiss
+*.pkl
+*.pickle
+
+# Logs
+*.log
+logs/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/

@@ -35,6 +35,8 @@ Fluxo principal:
 git clone https://github.com/LorenzoMarty/Oraculo-Chatbot.git
 cd Oraculo-Chatbot
 
+python -m venv .venv
+
 # Windows
 .venv\Scripts\activate
 
