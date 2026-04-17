@@ -99,7 +99,7 @@ def load_file(tipo: str, caminho: str) -> str:
     if tipo == "site":
         return load_site(caminho)
 
-    elif tipo == "youtube":
+    elif tipo in ["youtube", "video"]:
         return load_youtube(caminho)
 
     elif tipo == "csv":
