@@ -6,8 +6,8 @@ import tempfile
 from urllib.parse import urlparse
 from uuid import uuid4
 
-from core.knowledge.knowledge import ingest_file
-from apps.AI.services import agent
+from core.knowledge.ingest import ingest_file
+from core.agents.services import agent
 
 FILE_TYPES = {"csv", "pdf", "txt", "text"}
 URL_TYPES = {"site", "youtube", "video"}
