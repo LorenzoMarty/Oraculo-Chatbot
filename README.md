@@ -25,7 +25,7 @@ O projeto combina:
 Fluxo principal:
 
 1. O usuário envia um arquivo/link
-2. O usuário escolhe o modelo de IA e insere sua key
+2. O sistema processa o arquivo
 3. O usuário faz perguntas no chat
 4. O chat responde baseado no arquivo/link fornecido
 
@@ -51,28 +51,21 @@ pip install -r requirements.txt
 Crie um arquivo `.env`:
 
 ```
-OPENAI_API_KEY=your_key_here
 GROQ_API_KEY=your_key_here
-
-DEFAULT_PROVIDER=OpenAI
-DEFAULT_MODEL_OPENAI=gpt-4o-mini
-DEFAULT_MODEL_GROQ=llama-3.1-8b-instant
-
-APP_TITLE=Oráculo
 ```
 
 ## Executando o projeto
 
 ```bash
-streamlit run app_streamlit.py
+python manage.py runserver
 ```
 
 ## Tecnologias
 
 - Python
-- Streamlit
-- LangChain
-- OpenAI API
+- Django
+- Agno
+- Qdrant
 - Groq API
 
 ## Autor
