@@ -1,74 +1,61 @@
-# Oráculo — Chat com IA
+# Oráculo
 
-O **Oráculo** é uma aplicação web que permite conversar com LLMs utilizando **conteúdo de arquivos, sites ou vídeos do YouTube** como contexto.
+Web chat that lets you talk to an LLM using the content of **files, websites or YouTube videos** as context.
 
-O projeto combina:
+![Django](https://img.shields.io/badge/Django-6-092E20?logo=django&logoColor=white)
+![Agno](https://img.shields.io/badge/Agno-agents-111111)
+![Qdrant](https://img.shields.io/badge/Qdrant-vector%20store-DC244C)
 
-* **Django** para backend
-* **Agno** para orquestração do LLM
-* **RAG simples baseado em documentos carregados**
-* **Suporte a múltiplas fontes de dados**
+## Features
 
-## Funcionalidades
+- Interactive AI chat with streaming responses
+- Reads **PDF, CSV and TXT** files
+- Analyzes **websites**
+- Extracts content from **YouTube videos**
+- Answers **only from the loaded source** (simple RAG)
+- Switch model and provider on the fly
+- Clear-conversation button
 
-- Chat interativo com IA
-- Leitura de **PDF, CSV e TXT**
-- Análise de **sites**
-- Extração de conteúdo de **vídeos do YouTube**
-- Respostas baseadas **somente no documento carregado**
-- Troca dinâmica de **modelo e provedor**
-- Botão para **limpar conversa**
-- Streaming de resposta em tempo real
+## How it works
 
-## Arquitetura
+1. The user uploads a file or pastes a link.
+2. The system loads the source, splits it into chunks and indexes it in Qdrant.
+3. The user asks questions in the chat.
+4. The agent retrieves the relevant chunks and answers based on them.
 
-Fluxo principal:
+## Stack
 
-1. O usuário envia um arquivo/link
-2. O sistema processa o arquivo
-3. O usuário faz perguntas no chat
-4. O chat responde baseado no arquivo/link fornecido
+| Layer | Technology |
+|---|---|
+| Backend | Python, Django |
+| LLM orchestration | Agno |
+| Retrieval | Qdrant |
+| Model provider | Groq API |
 
-## Instalação
+## Running locally
 
 ```bash
 git clone https://github.com/LorenzoMarty/Oraculo-Chatbot.git
 cd Oraculo-Chatbot
-
 python -m venv .venv
-
-# Windows
-.venv\Scripts\activate
-
-# Linux/macOS
-source .venv/bin/activate
-
+source .venv/bin/activate          # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-## Variáveis de ambiente
-
-Crie um arquivo `.env`:
+Create a `.env` file:
 
 ```
 GROQ_API_KEY=your_key_here
 ```
 
-## Executando o projeto
+Then start the server:
 
 ```bash
 python manage.py runserver
 ```
 
-## Tecnologias
+The original Portuguese README is kept in [docs/README.pt-BR.md](docs/README.pt-BR.md).
 
-- Python
-- Django
-- Agno
-- Qdrant
-- Groq API
+## Author
 
-## Autor
-
-**Lorenzo Marty**\
-GitHub: https://github.com/LorenzoMarty
+**Lorenzo Marty** — [GitHub](https://github.com/LorenzoMarty)
