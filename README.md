@@ -1,14 +1,15 @@
 # Oráculo
 
-Web chat that lets you talk to an LLM using the content of **files, websites or YouTube videos** as context.
+> Web chat that lets you talk to an LLM using the content of **files, websites or YouTube videos** as context.
 
 ![Django](https://img.shields.io/badge/Django-6-092E20?logo=django&logoColor=white)
 ![Agno](https://img.shields.io/badge/Agno-agents-111111)
 ![Qdrant](https://img.shields.io/badge/Qdrant-vector%20store-DC244C)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ![Oráculo chat interface: upload panel on the left, conversation on the right](docs/screenshots/chat.png)
 
-## Features
+## What it does
 
 - Interactive AI chat with streaming responses
 - Reads **PDF, CSV and TXT** files
@@ -25,7 +26,7 @@ Web chat that lets you talk to an LLM using the content of **files, websites or 
 3. The user asks questions in the chat.
 4. The agent retrieves the relevant chunks and answers based on them.
 
-## Stack
+## Tech stack
 
 | Layer | Technology |
 |---|---|
@@ -34,7 +35,7 @@ Web chat that lets you talk to an LLM using the content of **files, websites or 
 | Retrieval | Qdrant |
 | Model provider | Groq API |
 
-## Running locally
+## Getting started
 
 Requires Python 3.12+ (Django 6) and a [Groq](https://console.groq.com/) API key. Documents are indexed in [Qdrant](https://qdrant.tech/), which must be running before the app starts.
 
@@ -65,6 +66,14 @@ python manage.py runserver
 ```
 
 The original Portuguese README is kept in [docs/README.pt-BR.md](docs/README.pt-BR.md).
+
+## Quality checks
+
+There is no automated test suite yet.
+
+## Status
+
+Working prototype: a simple RAG that answers only from the one source currently loaded.
 
 ## License
 
